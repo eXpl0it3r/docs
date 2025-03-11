@@ -1,0 +1,18 @@
+name: Build Docs
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install, Build & Upload
+      uses: withastro/action@v3
+      with:
+        node-version: 22
+        package-manager: pnpm@latest
